@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- Acá va el include('partials/head') -->
+  <%- include('partials/head') %>
+<body>
+  <!-- Acá va el include('partials/headerNavbar') -->
+  <%- include('partials/headerNavbar') %>
+  <div class="container__productDetail">
+    <div class="description__productDetail">
+      <div class="description--wrap__productDetail">
+        <!-- Acá va el nombre del producto -->
+        <h2><%= productDetail.name %> </h2>
+        <img class="description__img--productDetail" src="/images/mate1.jpg">
+      </div>
+      <p class="description__text--productDetail">
+        <!-- Acá va la descripción -->
+        <%= productDetail.description %>
+      </p>
+    </div>
+    <div class="purchase__productDetail">
+      <p class="purchase--price__productDetail">
+        <!-- Acá va el precio -->
+        Precio: $<%= productDetail.price %>
+      </p>
+      <h3>Métodos de pago:</h3>
+      <ul class="paymentMethods__productDetail">
+        <li><i class="fab fa-cc-visa"></i></li>
+        <li><i class="fab fa-cc-mastercard"></i></li>
+        <li><i class="fab fa-cc-amex"></i></li>
+        <li><i class="fab fa-cc-paypal"></i></li>
+        <li><i class="fab fa-btc"></i></li>
+      </ul>
+      <ul class="purchase--footer__productDetail">
+        <li>
+          <p>Pagá en 12 cuotas sin interés</p>
+        </li>
+        <li>
+          <p>Envío gratis en todo el país</p>
+        </li>
+        <a href="/products/cart/<%= productDetail.id %>">
+        <div class="signup__register--button">
+            <i class="fas fa-shopping-cart"></i>
+            <span>
+              Añadir al carrito
+            </span>
+        </div>
+      </a>
+        <a href="/products/edit/<%= productDetail.id %> ">
+          <button class="signup__register--button">Editar</button>
+        </a>
+        <form action="/products/delete/<%= productDetail.id %>?_method=delete" method="POST">
+          <button class="delete--button" type="submit">Eliminar</button>
+        </form>
+      </ul>
+    </div>
+  </div>
+  <!-- Acá va el include('partials/footer') -->
+  <%- include('partials/footer') %>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- Acá va el include('partials/head') -->
+  <%- include('partials/head') %>
+<body>
+  <!-- Acá va el include('partials/headerNavbar') -->
+  <%- include('partials/headerNavbar') %>
+  <section class="container-productAdd">
+    <div>
+      <h2 class="productAdd-title">Editando:</h2>
+    </div>
+    <form class="form-productAdd" action="/products/edit/<%= productFound.id %>?_method=PUT" method="POST">
+      <div class="cuerpo-productAdd">
+        <div class="left-body-productAdd">
+          <div class="product-name-productAdd">
+            <label for="name">Nombre del producto</label>
+            <br>
+            <input type="text" id="name" name="name" value="<%= productFound.name %> ">
+          </div>
+          <div class="product-price-productAdd">
+            <label for="price">Precio</label>
+            <br>
+            <input type="text" id="price" name="price" value="<%= productFound.price %> ">
+          </div>
+        </div>
+        <div class="right-body-productAdd">
+          <div class="product-category-productAdd">
+            <label for="category">Categoría:</label>
+            <br>
+            <select name="category" id="category">
+              <option value="mate">Mates</option>
+              <option value="bombilla">Bombillas</option>
+              <option value="termo">Termos</option>
+              <option value="bolso">Bolsos</option>
+            </select>
+          </div>
+          <div class="product-discount-productAdd">
+            <label for="discount">Descuento</label>
+            <br>
+            <input type="number" id="discount" name="discount" value="<%= productFound.discount %>">
+          </div>
+          <div class="product__image--productAdd">
+            <label for="image">Imágenes</label>
+            <br>
+            <input type="file" id="image" name="image">
+          </div>
+        </div>
+        <div class="product-description-productAdd">
+          <label for="description">Descripción</label>
+          <br>
+          <textarea id="description" name="description" cols=30 rows=5><%= productFound.description %></textarea>
+        </div>
+        <div class="product__button--productAdd">
+          <button class="store-btn-productAdd">Guardar producto</button>
+        </div>
+      </div>
+    </form>
+  </section>
+  <!-- Acá va el include('partials/footer') -->
+  <%- include('partials/footer') %>
+</body>
+</html>

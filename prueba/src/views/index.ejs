@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alma-Mate</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./images/almamate.png" type="image/x-icon">
+  <!-- Fonts: Merriweather - Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> 
+</head>
+<body>
+
+  <div class="container">
+    <!-- Nav-bar -->
+    <nav class="nav-main">
+      <div class="nav-main__wrapper">
+        <a href="./">
+          <img class="nav-brand" src="/images/almamate.png" alt="Logo de Alma-Mate">
+        </a>
+      </div>
+      <ul class="nav-menu">
+        <li>
+          <a href="/products/kit">Armá tu kit</a>
+        </li>
+        <li>
+          <a href="/aboutUs">Sobre nosotros</a>
+        </li>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+        <li>
+          <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+        <!-- probando la seccion de cuenta -->
+        <li>
+          <a href="/users/login"><i class="far fa-user"></i></a>
+        </li>
+        <!-- aca termina la seccion de cuenta -->
+      </ul>
+    </nav>
+<!-- El banner tipo carrusel -->
+<div id="slider">
+  <input type="radio" name="slider" id="slide1" checked>
+  <input type="radio" name="slider" id="slide2">
+  <input type="radio" name="slider" id="slide3">
+  <input type="radio" name="slider" id="slide4">
+  <div id="slides">
+     <div id="overflow">
+        <div class="inner">
+           <div class="slide slide_1">
+              <div class="slide-content">
+                 <img src="/images/kit-1-banner.jpg" alt="">
+              </div>
+           </div>
+           <div class="slide slide_2">
+              <div class="slide-content">
+                 <h2>Slide 2</h2>
+                 <p>Content for Slide 2</p>
+              </div>
+           </div>
+           <div class="slide slide_3">
+              <div class="slide-content">
+                 <h2>Slide 3</h2>
+                 <p>Content for Slide 3</p>
+              </div>
+           </div>
+           <div class="slide slide_4">
+              <div class="slide-content">
+                 <h2>Slide 4</h2>
+                 <p>Content for Slide 4</p>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div>
+     <label for="slide1"></label>
+     <label for="slide2"></label>
+     <label for="slide3"></label>
+     <label for="slide4"></label>
+  </div>
+  <div id="bullets">
+     <label for="slide1"></label>
+     <label for="slide2"></label>
+     <label for="slide3"></label>
+     <label for="slide4"></label>
+  </div>
+</div>
+<!-- aca termina el banner -->
+    <!-- Products -->
+    <h2 class="products-title">¡Conocé nuestros productos!</h2>
+    <div class="products">
+      <div>
+        <img src="./images/mate.jpg" alt="Imagen de un mate">
+        <h2>Mates</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius reprehenderit ipsum laudantium laborum aperiam quae, commodi animi molestiae aliquid repudiandae?</p>
+        <a href="">Más</a>
+      </div>
+      <div>
+        <img src="./images/nosotros.jpg" alt="Imagen de un mate">
+        <h2>Bombillas</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius reprehenderit ipsum laudantium laborum aperiam quae, commodi animi molestiae aliquid repudiandae?</p>
+        <a href="">Más</a>
+      </div>
+      <div>
+        <img src="./images/termos.jpg" alt="Imagen de un mate">
+        <h2>Termos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius reprehenderit ipsum laudantium laborum aperiam quae, commodi animi molestiae aliquid repudiandae?</p>
+        <a href="">Más</a>
+      </div>
+      <div>
+        <img src="./images/bolso.jpg" alt="Imagen de un mate">
+        <h2>Bolsos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius reprehenderit ipsum laudantium laborum aperiam quae, commodi animi molestiae aliquid repudiandae?</p>
+        <a href="">Más</a>
+      </div>
+    </div>
+    <!-- Banner -->
+    <section class="banner">
+      <div class="content">
+        <h2>Sobre nosotros</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, repellat alias optio totam error dolorem non nisi similique accusamus ullam.</p>
+        <a class="btn" href="/aboutus">Más</a>
+      </div>
+    </section>
+    <!-- Social networks -->
+    <section class="social-networks">
+      <p>Seguínos en:</p>
+      <div class="links">
+        <a href="">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
+   <!-- Footer -->
+   <footer>
+    <div class="footer-container">
+      <ul>
+        <li>
+          <a href="">Términos y condiciones</a>
+        </li>
+        <li>
+          <a href="">Declaración de privacidad</a>
+        </li>
+        <li>
+          <a href="">Preguntas frecuentes</a>
+        </li>
+        <li>
+          <a href="">Envíos, devoluciones y garantía</a>
+        </li>
+      </ul>
+    </div>
+    <h3>Copyright © 2020 Alma-Mate. Todos los derechos reservados.</h3>
+   </footer>
+
+  </div>
+  
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- JavaScript -->
+  <script src='js/main.js'></script>
+  
+</body>
+</html>
+

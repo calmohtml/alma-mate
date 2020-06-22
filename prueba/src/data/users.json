@@ -1,0 +1,46 @@
+[
+ {
+  "id": 1,
+  "email": "nousley0@pinterest.com",
+  "password": "OPjgLNbGgTdD",
+  "repeat_password": "dyhxGC"
+ },
+ {
+  "id": 2,
+  "email": "emaccomiskey1@ucoz.ru",
+  "password": "jbZsa4p",
+  "repeat_password": "dU00XN4"
+ },
+ {
+  "id": 3,
+  "email": "fcamillo2@mashable.com",
+  "password": "m32zWv6gzV",
+  "repeat_password": "AQEpfLd"
+ },
+ {
+  "id": 4,
+  "email": "wgooke3@google.ru",
+  "password": "VPYUG2r",
+  "repeat_password": "IOHdmWAHuVmc"
+ },
+ {
+  "id": 5,
+  "email": "mscandrick4@blinklist.com",
+  "password": "WQaK1kxPE",
+  "repeat_password": "i13iVz4iuY3"
+ },
+ {
+  "id": 6,
+  "email": "nicolasdorazio7@gmail.com",
+  "password": "555",
+  "repeatpassword": "555",
+  "avatar": "avatar-1592693157254.png"
+ },
+ {
+  "id": 7,
+  "email": "nico@algo.com",
+  "password": "$2a$15$WlPKkbM7iSpGKV/0W6cIYeoVOsS17.4HORrrmhUbrwUEmWDphf5gy",
+  "repeatpassword": "$2a$15$yMFzH1wIUWh2XRmJS5r8rOmSUKM6vvDJN1McnqGMc3vh7KmdQAkb6",
+  "avatar": "avatar-1592694080383.png"
+ }
+]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Acá va el include('partials/head') -->
+    <%- include('partials/head') %>
+<body>
+    <!-- Acá va el include('partials/headerNavbar') -->
+    <%- include('partials/headerNavbar') %>
+    <!-- cabecera -->
+    <div class="container-productCart">
+        <div class="main-header-productCart">
+            <h2 class="title-productCart">Carrito de compras</h2>
+        </div>
+        <section class="section-productCart">
+            <div class="nameAndPhoto-productCart">
+                <h3 class="product-name-productCart"><%= productCart.name %></h3>
+                <img class="product-image-productCart" src="images/mate1.jpg">
+            </div>
+            <p class="description-productCart"><%= productCart.description %></p>
+            <div class="cart-detail">
+                <div class="detailPrice-productCart">
+                    <h2 class="total-price-productCart">Total a pagar</h2>
+                    <h3 class="price-productCart">$<%= productCart.price %></h3>
+                </div>
+                <div class="btns-productCart">
+                    <!-- boton de cantidad -->
+                    <div class="quantity-productCart" id="quantity">Cantidad
+                        <button class="arrow" onclick="downClick()">&#8249;</button><span id="number"></span><button class="arrow" onclick=upClick()>&#8250;</button>
+                      </div>
+                      <!-- boton de cantidad -->
+                      <br>
+                      <button class="signup__register--button" type="submit">Continuar compra</button>
+                    <br>
+                    <button class="delete--button" type="submit">Eliminar</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Acá va el include('partials/footer') -->
+    <%- include('partials/footer') %>
+    <script src='../../js/productCart.js'></script>
+</body>
+</html>
