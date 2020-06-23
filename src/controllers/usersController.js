@@ -19,20 +19,18 @@ const usersController = {
         storeUser = {
         id: users[users.length - 1].id + 1,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 15),
-        repeatpassword: bcrypt.hashSync(req.body.repeatpassword, 15),
+        password: bcrypt.hashSync(req.body.password, 10),
+        repeatpassword: bcrypt.hashSync(req.body.repeatpassword, 10),
         avatar: req.files[0].filename,
     }
     let newDB = [...users, storeUser]
     fs.writeFileSync(usersFilePath, JSON.stringify(newDB, null, ' '))
     res.redirect('/')
     },
+
     processLogin: (req, res) => {
         let errors = validationResult
     }
 }
 
 module.exports = usersController;
-
-
-// joan lpm 
