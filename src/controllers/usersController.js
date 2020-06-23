@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const session = require('express-session')
-const { check, validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -29,7 +29,8 @@ const usersController = {
     },
 
     processLogin: (req, res) => {
-        let errors = validationResult
+        let validation = validationResult(req)
+        let errors = validation.errors
     }
 }
 
