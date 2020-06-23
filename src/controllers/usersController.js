@@ -31,18 +31,23 @@ const usersController = {
     processLogin: (req, res) => {
         let validation = validationResult(req)
         let errors = validation.errors
-
-        let userToLog = getUserByEmail(req.body.email);
-
-        if (userToLog != undefined) {
-            if(bcrypt.compareSync(req.body.password, userToLog.password)) {
-                res.redirect(`/profile/${userToLog.id}`)
-            } else{
-                res.render('Credenciales erróneas')
-            }
+        if (errors != '') {
+            res.render('login', {errors})
         } else {
-            // Si no hay un usuario con ese e-mail
+            let userToLog = getUserByEmail(req.body.email);
+            res.send('Bienvenido' + userToLog)
         }
+
+        
+        // if (userToLog != undefined) {
+        //     if(bcrypt.compareSync(req.body.password, userToLog.password)) {
+        //         res.redirect(`/profile/${userToLog.id}`)
+        //     } else{
+        //         res.render('Credenciales erróneas')
+        //     }
+        // } else {
+        //     Si no hay un usuario con ese e-mail
+        // }
     }
 }
 

@@ -12,9 +12,16 @@
   <section class="signup__register">
     <section class="signup__register--container">
       <h2>Ingresá</h2>
-      <form class="signup__register--form" action="">
-        <input class="" type="email" placeholder="E-mail">
-        <input class="" type="password" placeholder="Contraseña">
+      <form class="signup__register--form" action="/users/login" method="POST">
+
+        <% if (typeof errors != "undefined") { %>
+              <% errors.forEach(error => { %>
+               <p><%= error.msg %> </p>
+              <% }) %>
+        <% } %>
+
+        <input class="" type="email" name="email" placeholder="E-mail">
+        <input class="" type="password" name="password" placeholder="Contraseña">
         <button class="button--register">Registrar</button>
       </form>
     </section>

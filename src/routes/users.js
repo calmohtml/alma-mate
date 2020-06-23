@@ -5,7 +5,7 @@ const usersController = require('../controllers/usersController');
 const path = require('path')
 const { use } = require('./products');
 const session = require('express-session')
-const { check, validationResult } = require('express-validator'); 
+const { check, validationResult, body } = require('express-validator'); 
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
