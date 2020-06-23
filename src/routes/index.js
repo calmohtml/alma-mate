@@ -10,4 +10,7 @@ router.get('/', mainController.index);
 // Ruta de "Sobre nosotros"
 router.get('/aboutus', mainController.aboutUs)
 
+// Ruta de "Contacto"
+router.get('/contact', mainController.contact)
+
 module.exports = router;
