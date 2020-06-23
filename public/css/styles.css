@@ -816,6 +816,23 @@ a {
 
 /* Fin de About Us - Desktop */
 
+/* contact - Desktop */
+
+.contactUs {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactUs a li {
+  padding-top: 15px;
+}
+
+.contactUs a span {
+  color: #f4f4f4;
+}
+
+/* Fin de contact - Desktop */
+
 /* index - Tablet */
 
 @media(max-width: 768px) {
