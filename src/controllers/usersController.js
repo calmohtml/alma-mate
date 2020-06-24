@@ -33,21 +33,8 @@ const usersController = {
         let errors = validation.errors
         if (errors != '') {
             res.render('login', {errors})
-        } else {
-            let userToLog = getUserByEmail(req.body.email);
-            res.send('Bienvenido' + userToLog)
-        }
+        } 
 
-        
-        // if (userToLog != undefined) {
-        //     if(bcrypt.compareSync(req.body.password, userToLog.password)) {
-        //         res.redirect(`/profile/${userToLog.id}`)
-        //     } else{
-        //         res.render('Credenciales erróneas')
-        //     }
-        // } else {
-        //     Si no hay un usuario con ese e-mail
-        // }
     }
 }
 
