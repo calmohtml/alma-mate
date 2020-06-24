@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer')
-const usersController = require('../controllers/usersController');
 const path = require('path')
 const { use } = require('./products');
 const session = require('express-session')
-const { check, validationResult, body } = require('express-validator'); 
+const { check, validationResult, body } = require('express-validator');
+
+const usersController = require('../controllers/usersController');
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {

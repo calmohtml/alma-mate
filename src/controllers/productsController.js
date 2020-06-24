@@ -17,7 +17,7 @@ const productsController = {
       category: req.body.category,
       discount: req.body.discount,
       description: req.body.description,
-      image: req.body.image
+      image: req.files[0].filename,
     }
     let newDB = [...products, storeProducts]
     fs.writeFileSync(productsFilePath, JSON.stringify(newDB, null, ' '))
