@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const session = require('express-session')
-const { validationResult } = require('express-validator');
+const { check, validationResult, body } = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -16,6 +16,11 @@ const usersController = {
     },
     // este controlador es el q va a guardar la info en la base de datos en json
     storeUser: (req, res, next) => {
+        let validation = validationResult(req)
+        let errors = validation.errors
+        if (errors != '') {
+            res.render('register', {errors})
+        }
         storeUser = {
         id: users[users.length - 1].id + 1,
         email: req.body.email,
@@ -33,7 +38,8 @@ const usersController = {
         let errors = validation.errors
         if (errors != '') {
             res.render('login', {errors})
-        } else {
+        } 
+        else {
             users.forEach(user => {
                 if(user.email == req.body.email){
                     res.send('hola' + " " + user.email)

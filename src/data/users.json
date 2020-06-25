@@ -35,5 +35,12 @@
   "password": "$2a$10$EnGBMg2Rz/QrVrfTu3pxZuFI4y.PW7CF5Xk4h.4jQME3KqYrhIo9i",
   "repeatpassword": "$2a$10$tTeKjD0QJWayhw6gIWvb5up6qZBU79ntOLJnDsf5dwnX0Ax0iX/Vm",
   "avatar": "avatar-1593046005278.png"
+ },
+ {
+  "id": 7,
+  "email": "nico@algo.com",
+  "password": "$2a$10$oSSLtuEq9JzU6UsIQCATOuebn6pCo8jGaGLSKBuEuUYZ9yfZCCC9G",
+  "repeatpassword": "$2a$10$unpZ.bqJLbMkvUawdlHr4.MHuBFE1gLIFW1s1umYHBBvPeDGPzYIC",
+  "avatar": "avatar-1593116064642.png"
  }
 ]

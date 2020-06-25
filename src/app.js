@@ -9,12 +9,16 @@ const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const session = require('express-session')
-const { check, validationResult } = require('express-validator');
+const { check, validationResult, body } = require('express-validator');
+const logMiddleware = require('./middlewares/logMiddleware')
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
+app.use(logMiddleware)
 
 app.use(logger('dev'));
 app.use(express.json());
