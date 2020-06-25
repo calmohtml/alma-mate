@@ -28,5 +28,12 @@
   "email": "mscandrick4@blinklist.com",
   "password": "WQaK1kxPE",
   "repeat_password": "i13iVz4iuY3"
+ },
+ {
+  "id": 6,
+  "email": "nicolasdorazio7@gmail.com",
+  "password": "$2a$10$EnGBMg2Rz/QrVrfTu3pxZuFI4y.PW7CF5Xk4h.4jQME3KqYrhIo9i",
+  "repeatpassword": "$2a$10$tTeKjD0QJWayhw6gIWvb5up6qZBU79ntOLJnDsf5dwnX0Ax0iX/Vm",
+  "avatar": "avatar-1593046005278.png"
  }
 ]

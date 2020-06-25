@@ -33,9 +33,34 @@ const usersController = {
         let errors = validation.errors
         if (errors != '') {
             res.render('login', {errors})
-        } 
-
+        } else {
+            users.forEach(user => {
+                if(user.email == req.body.email){
+                    res.send('hola' + " " + user.email)
+                } else {
+                    res.render('login', {errors:[
+                    {msg: 'credenciales invalidas'}
+                    ]
+                    })
+                }
+            });
+        }
     }
 }
 
 module.exports = usersController;
+
+
+
+
+// users.find((user)=> user.email == req.body.email)
+//                     if(bcrypt.compareSync(req.body.password, users.password)){
+//                         let usuarioALoguearse = users
+//             }
+//             if (usuarioALoguearse == undefined) {
+//                 return res.render('login', {errors:[
+//                     {msg: 'credenciales invalidas'}
+//                 ]
+//                 })
+//             }
+//             req.session.usuarioLogueado = usuarioALoguearse
