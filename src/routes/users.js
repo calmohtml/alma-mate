@@ -7,6 +7,7 @@ const session = require('express-session')
 const { check, validationResult, body } = require('express-validator');
 const logDBMiddleware = require('../middlewares/logDBMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
 
 const usersController = require('../controllers/usersController');
 
@@ -22,7 +23,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 // Ruta de logueo
-router.get('/login', usersController.login)
+router.get('/login', guestMiddleware, usersController.login)
 
 // Ruta de validación de logeo
 router.post('/login', [

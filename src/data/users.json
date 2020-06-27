@@ -49,5 +49,12 @@
   "password": "$2a$10$lmtrP8gTcgYLrLo0Gn.WV.P.8mvJUcMh7w8xUOc7D178njl1OSstK",
   "repeatpassword": "$2a$10$zO2ozjqkIsZvVTuKu4APV./FB90hByOOIlJb2mLrRuMfriOXr1H9u",
   "avatar": "avatar-1593286969695.png"
+ },
+ {
+  "id": 9,
+  "email": "joan1@gmail.com",
+  "password": "$2a$10$jhj2praVYy5FjZEAUflM.u0yaD.YCABSfoFwv0Hylw7WDUPpIi46u",
+  "repeatpassword": "$2a$10$wrl3f7V4qIJEuaL8vNpdxego2L1w1COn.mLxOZ0aJLOWYgQNLNvW2",
+  "avatar": "avatar-1593301367971.png"
  }
 ]
