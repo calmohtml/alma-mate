@@ -36,24 +36,21 @@ const usersController = {
     processLogin: (req, res) => {
         let validation = validationResult(req);
         let errors = validation.errors;
-        if( errors == ""){
-         let usuario = users.find( userLogin => userLogin.email == req.body.email);
-         if (usuario != undefined){
-            if (bcrypt.compareSync(req.body.password, usuario.password)){
-                req.session.userId = usuario.id;
-                if(req.body.recordame){
-                    res.cookie('userCookie',usuario.id,{maxAge:10000000})
-                }
-                res.redirect('/')
-            }else{
-                res.render('login',{errors})
-            }           
-        }else{
-            res.render('login',{errors})
-        }   
-    }else{
-        res.render('login',{errors})
-    }
+        if (errors == "") {
+            let usuario = users.find(userLogin => userLogin.email == req.body.email);
+            if (usuario != undefined){
+                if (bcrypt.compareSync(req.body.password, usuario.password)) {
+                    req.session.userId = usuario.id;
+                    res.redirect('/')
+                } else {
+                    res.render('login', {errors})
+                }           
+            } else {
+                res.render('login', {errors})
+            }   
+        } else {
+            res.render('login', {errors})
+        }
     }
 }
 
