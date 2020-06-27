@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const multer = require('multer')
 const router = express.Router();
+const authMiddleware = require('../middlewares/authMiddleware')
 
 /* GET users listing. */
 const productController = require("../controllers/productsController")
@@ -18,7 +19,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 // Rutas de creación y guardado de productos
-router.get('/add', productController.add);
+router.get('/add', authMiddleware, productController.add);
 router.post('/add', upload.any(), productController.store)
 
 // Ruta del carrito
