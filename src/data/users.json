@@ -32,15 +32,22 @@
  {
   "id": 6,
   "email": "nicolasdorazio7@gmail.com",
-  "password": "$2a$10$EnGBMg2Rz/QrVrfTu3pxZuFI4y.PW7CF5Xk4h.4jQME3KqYrhIo9i",
-  "repeatpassword": "$2a$10$tTeKjD0QJWayhw6gIWvb5up6qZBU79ntOLJnDsf5dwnX0Ax0iX/Vm",
-  "avatar": "avatar-1593046005278.png"
+  "password": "$2a$10$Me43cLbqnsxD88X3Kqqcwe.HJ3.Uq4QSChJMpD/MWWi/G.NKHc9Pu",
+  "repeatpassword": "$2a$10$4gOH6hrP3H9aYJS9R45e.ewfZk.CRaYTU/CM86bE5.iyF.M.DGuhW",
+  "avatar": "avatar-1593282196040.png"
  },
  {
   "id": 7,
-  "email": "nico@algo.com",
-  "password": "$2a$10$oSSLtuEq9JzU6UsIQCATOuebn6pCo8jGaGLSKBuEuUYZ9yfZCCC9G",
-  "repeatpassword": "$2a$10$unpZ.bqJLbMkvUawdlHr4.MHuBFE1gLIFW1s1umYHBBvPeDGPzYIC",
-  "avatar": "avatar-1593116064642.png"
+  "email": "lukitas@messi123capo.com",
+  "password": "$2a$10$3lfP.a8/NSJlgMNCu.Rg4.3yJB0RkvJIYLNs/MH10V5lZSaPUGcla",
+  "repeatpassword": "$2a$10$RJ5ug7H844odzD8OIWdgfe.Mq0u7hqzootcv8FURjqwxHdW1qdoYi",
+  "avatar": "avatar-1593283979290.png"
+ },
+ {
+  "id": 8,
+  "email": "joan@segovia.com",
+  "password": "$2a$10$lmtrP8gTcgYLrLo0Gn.WV.P.8mvJUcMh7w8xUOc7D178njl1OSstK",
+  "repeatpassword": "$2a$10$zO2ozjqkIsZvVTuKu4APV./FB90hByOOIlJb2mLrRuMfriOXr1H9u",
+  "avatar": "avatar-1593286969695.png"
  }
 ]
