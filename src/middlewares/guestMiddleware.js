@@ -1,8 +1,8 @@
 const guestMiddleware = (req, res, next) => {
-    if (req.session.userId == undefined) {
+    if (req.session.userId != undefined) {
         next();
     } else {
-        res.render('/')
+        res.send('SERVICIO EN MANTENIMIENTO')
     }
 }
 

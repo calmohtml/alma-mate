@@ -12,7 +12,8 @@ const session = require('express-session')
 const { check, validationResult, body } = require('express-validator');
 const logMiddleware = require('./middlewares/logMiddleware')
 const authMiddleware = require('./middlewares/authMiddleware')
-const guestMiddleware = require('./middlewares/guestMiddleware')
+
+
 const app = express();
 
 // view engine setup
@@ -20,8 +21,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logMiddleware)
-app.use(authMiddleware)
-app.use(guestMiddleware)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -6,6 +6,7 @@ const { use } = require('./products');
 const session = require('express-session')
 const { check, validationResult, body } = require('express-validator');
 const logDBMiddleware = require('../middlewares/logDBMiddleware')
+const guestMiddleware = require('../middlewares/guestMiddleware')
 
 const usersController = require('../controllers/usersController');
 
@@ -30,7 +31,7 @@ router.post('/login', [
 ], usersController.processLogin)
 
 // Ruta de registo para clientes nuevos
-router.get('/register', usersController.register)
+router.get('/register', guestMiddleware, usersController.register)
 router.post('/register', [
     check('email').isEmail().withMessage('E-mail no válido'),
     check('password').isLength({min: 8}).withMessage('Contraseña no válida'),
