@@ -23,7 +23,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 // Ruta de logueo
-router.get('/login', usersController.login)
+router.get('/login', guestMiddleware, usersController.login)
 
 // Ruta de validación de logeo
 router.post('/login', [

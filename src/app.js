@@ -11,7 +11,6 @@ const usersRouter = require('./routes/users');
 const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
 const logMiddleware = require('./middlewares/logMiddleware');
-const authMiddleware = require('./middlewares/authMiddleware');
 
 
 const app = express();

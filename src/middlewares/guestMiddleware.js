@@ -1,9 +1,8 @@
 const guestMiddleware = (req, res, next) => {
     if (req.session.userId != undefined) {
-        next();
-    } else {
-        res.send('SERVICIO EN MANTENIMIENTO')
+        return res.redirect('/')
     }
+    next()
 }
 
 module.exports = guestMiddleware;
