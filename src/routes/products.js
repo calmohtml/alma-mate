@@ -7,6 +7,7 @@ const adminMiddleware = require ('../middlewares/adminMiddleware')
 /* GET users listing. */
 const productController = require("../controllers/productsController")
 
+// metodo storage de multer para subir y almacenar las fotos de cada producto
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/images/products')

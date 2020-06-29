@@ -10,6 +10,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware')
 
 const usersController = require('../controllers/usersController');
 
+// el metodo storage de multer guarda la foto del avatar de cada usuario en una carpeta
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/images/users')

@@ -33,6 +33,7 @@ const usersController = {
     res.redirect('/')
     },
 
+    // este controlador va a hacer las validaciones del usuario para saber si ya esta registrado y luego loguearse y quedar en sesion
     processLogin: (req, res) => {
         let validation = validationResult(req);
         let errors = validation.errors;
