@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Acá va el include('partials/head') -->
+<%- include('partials/head') %>
+<body>
+    <div class="container__register">
+        <header>
+            <a href="../">
+                <img class="img__register" src="../images/almamate.png" alt="Logo de Alma-Mate">
+            </a>
+        </header>
+        <section class="signup__register">
+            <section class="signup__register--container">
+                <h2>Contáctanos</h2>
+                <form class="email--form" action="">
+                    <p>
+                        <label for="fullname">Nombre y apellido</label>
+                        <input type="text" name="fullname" id="fullname">
+                    </p>
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="fullname">
+                    </p>
+                    <p>
+                        <label for="affair">Asunto</label>
+                        <input type="text" name="affair" id="affair">
+                    </p>
+                    <p>
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" rows="4"></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">
+                            Enviar
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <section class="contact-info">
+                <h4>Más info</h4>
+                <ul>
+                    <li>
+                        <i class="fas fa-search-location"></i>
+                        742 Evergreen Terrace, Springfield
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-square-alt"></i>
+                        +54 9 11 4514-6761
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope-open-text"></i>
+                        contact@almamate.com
+                    </li>
+                </ul>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic adipisci provident odit, natus velit aliquid ducimus debitis iste recusandae magni!</p>
+            </section>
+            <a class="login__register" href="./register">No tenés una cuenta? Creala acá</a>
+        </section>
+        <!-- Acá va el include('partials/footer') -->
+        <%- include('partials/footer') %>
+    </div>
+</body>
+</html>

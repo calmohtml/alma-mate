@@ -13,4 +13,7 @@ router.get('/aboutus', mainController.aboutUs)
 // Ruta de "Contacto"
 router.get('/contact', mainController.contact)
 
+//Ruta del formulario de Contacto
+router.get('/sendemail', mainController.sendEmail)
+
 module.exports = router;

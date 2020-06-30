@@ -12,6 +12,9 @@ const mainController = {
 
   contact: (req, res) => {
     res.render('contact')
+  },
+  sendEmail: (req, res) => {
+    res.render('sendEmail')
   }
 };
 

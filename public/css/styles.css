@@ -833,6 +833,25 @@ a {
 
 /* Fin de contact - Desktop */
 
+/* Send email - Desktop */
+
+.email--form {
+  margin: 0;
+  padding: 1em;
+}
+
+.email--form button,
+.email--form input,
+.email--form textarea {
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background-color: none;
+  border-bottom: 1px solid #C0B283;
+}
+
+/* Fin de Send email - Desktop */
+
 /* index - Tablet */
 
 @media(max-width: 768px) {
