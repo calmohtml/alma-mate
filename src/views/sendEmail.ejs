@@ -14,8 +14,12 @@
                 <h2>Contáctanos</h2>
                 <form class="email--form" action="">
                     <p>
-                        <label for="fullname">Nombre y apellido</label>
-                        <input type="text" name="fullname" id="fullname">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name">
+                    </p>
+                    <p>
+                        <label for="lastname">Apellido</label>
+                        <input type="text" name="lastname" id="lastname">
                     </p>
                     <p>
                         <label for="email">Email</label>
@@ -25,17 +29,16 @@
                         <label for="affair">Asunto</label>
                         <input type="text" name="affair" id="affair">
                     </p>
-                    <p>
+                    <p class="block">
                         <label for="message">Mensaje</label>
                         <textarea name="message" rows="4"></textarea>
                     </p>
-                    <p>
-                        <button type="submit">
+                    <p class="block">
+                        <button class="signup__register--button" type="submit">
                             Enviar
                         </button>
                     </p>
                 </form>
-            </section>
             <section class="contact-info">
                 <h4>Más info</h4>
                 <ul>
@@ -54,7 +57,7 @@
                 </ul>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic adipisci provident odit, natus velit aliquid ducimus debitis iste recusandae magni!</p>
             </section>
-            <a class="login__register" href="./register">No tenés una cuenta? Creala acá</a>
+            </section>
         </section>
         <!-- Acá va el include('partials/footer') -->
         <%- include('partials/footer') %>

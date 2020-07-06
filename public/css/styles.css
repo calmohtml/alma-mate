@@ -836,18 +836,34 @@ a {
 /* Send email - Desktop */
 
 .email--form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.email--form .block {
+  grid-column: 1/3;
+}
+
+.email--form p {
   margin: 0;
   padding: 1em;
 }
 
-.email--form button,
 .email--form input,
 .email--form textarea {
   width: 100%;
   padding: .7em;
-  border: none;
-  background-color: none;
-  border-bottom: 1px solid #C0B283;
+  background-color: #C0B283;
+  border: 1px solid #373737;
+  outline: none;
+  border-radius: 18px;
+}
+
+.contact-info h4,
+.contact-info ul,
+.contact-info p {
+  text-align: center;
+  margin: 0 0 1rem 0;
 }
 
 /* Fin de Send email - Desktop */
