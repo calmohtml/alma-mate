@@ -1,6 +1,6 @@
 module.exports = (sequelize,DataTypes )=>{
-    const tickets_products = sequelize.define(
-        'Ticket_Products',
+    const detail = sequelize.define(
+        'Detail',
         {
             id_ticket: DataTypes.INTEGER,
             id_product: DataTypes.INTEGER,
@@ -11,5 +11,5 @@ module.exports = (sequelize,DataTypes )=>{
             timestamps: false
         },
 );
-        return tickets_products
+        return detail
 }

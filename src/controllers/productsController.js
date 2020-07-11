@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+// linkeo nuestra base de datos -----------------------------------------------------
+const DB = require('../database/models') 
+const { sequelize } = require('../database/models')
+const OP = DB.Sequelize.Op
+// -------------------------------------------------------------------------------------
+
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -24,12 +30,17 @@ const productsController = {
     res.redirect('/products/kit')
   },
 
+  // este controlador agrega el producto al carrito ----------------------------
   cart: (req, res) => {
-    let productCart = products.find(product =>
-      product.id == req.params.id
-    )
-    res.render('productCart', {productCart})
+    DB.Product.findByPk(req.params.id)
+        .then((productCart)=>{
+            res.render('productCart', {productCart: productCart})
+        })
+        .catch((error)=>{
+            res.send(error)
+        })
   },
+  // ---------------------------------------------------------------------------
 
   destroy: (req, res) => {
     let productId = req.params.id
@@ -41,12 +52,17 @@ const productsController = {
     res.redirect('/products/kit')
   },
 
+  // este controlador va a mostrar el detalle de casa producto----------------
   detail: (req, res) => {
-    let productDetail = products.find(product =>
-      product.id == req.params.id
-    )
-    res.render('productDetail', {productDetail})
+    DB.Product.findByPk(req.params.id)
+        .then((productDetail)=>{
+            res.render('productDetail', {productDetail: productDetail})
+        })
+        .catch((error)=>{
+            res.send(error)
+        })
   },
+  // -------------------------------------------------------------------------
 
   edit: (req, res) => {
     let productFound = products.find(product =>
@@ -75,9 +91,17 @@ const productsController = {
       res.redirect('/products/kit')
   },
 
+  // este controlador va a listar todos los productos -----------------------------------
   kit: (req, res) => {
-    res.render('armaTuKit', {products})
+    DB.Product.findAll()
+        .then((listado)=>{
+            res.render('armaTuKit',{listado: listado})
+        })
+        .catch((error)=>{
+            res.send(error)
+        })
   },
+  // -------------------------------------------------------------------------------------
 }
 
 module.exports = productsController;

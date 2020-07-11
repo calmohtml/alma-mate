@@ -17,8 +17,8 @@
             <h2>Mates</h2>
         </div>
         <div class="arma-tu-kit__container">
-            <% products.forEach(product => { %>
-            <% if (product.category == "mate") { %>
+            <% listado.forEach(product => { %>
+                <% if (product.id_category == 1) { %>
             <div class="arma-tu-kit-item">
                 <a href="../products/detail/<%= product.id %>">
                     <img class="arma-tu-kit-item__img" src="../images/mate1.jpg" alt="">
@@ -37,14 +37,14 @@
             <h2>Bombillas</h2>
         </div>
         <div class="arma-tu-kit__container">
-            <% products.forEach(product => { %>
-            <% if (product.category == "bombilla") { %>
+            <% listado.forEach(product => { %>
+                <% if (product.id_category == 2) { %>
             <div class="arma-tu-kit-item">
                 <a href="../products/detail/<%= product.id %>">
                     <img class="arma-tu-kit-item__img" src="../images/bombilla1.jpg" alt="">
                     <div class="arma-tu-kit-item__details">
-                        <p class="arma-tu-kit-item__details--title"><%= product.name %> </p>
-                        <p class="arma-tu-kit-item__details--subtitle"><%= product.price %> </p>
+                        <p class="arma-tu-kit-item__details--title"><%= product.name %></p>
+                        <p class="arma-tu-kit-item__details--subtitle"><%= product.price %></p>
                     </div>
                 </a>
             </div>
@@ -57,8 +57,8 @@
             <h2>Termos</h2>
         </div>
         <div class="arma-tu-kit__container">
-            <% products.forEach(product => { %>
-                <% if (product.category == "termo") { %>
+            <% listado.forEach(product => { %>
+                <% if (product.id_category == 3) { %>
             <div class="arma-tu-kit-item">
                 <a href="../products/detail/<%= product.id %>">
                     <img class="arma-tu-kit-item__img" src="../images/termo-stanley1.jpg" alt="">
@@ -77,8 +77,8 @@
             <h2>Bolsos</h2>
         </div>
         <div class="arma-tu-kit__container">
-            <% products.forEach(product => { %>
-                <% if (product.category == "bolso") { %>
+            <% listado.forEach(product => { %>
+                <% if (product.id_category == 4) { %>
             <div class="arma-tu-kit-item">
                 <a href="../products/detail/<%= product.id %>">
                     <img class="arma-tu-kit-item__img" src="../images/bolso1.jpg" alt="">

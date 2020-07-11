@@ -3,9 +3,9 @@ module.exports = (sequelize,DataTypes )=>{
         'Product',
         {
             name: DataTypes.STRING,
-            price: DataTypes.DECIMAL,
+            price: DataTypes.INTEGER,
             id_category: DataTypes.INTEGER,
-            discount:DataTypes.INTEGER,
+            discount: DataTypes.INTEGER,
             description: DataTypes.STRING,
             id_brand: DataTypes.INTEGER,
             image: DataTypes.STRING,
@@ -14,6 +14,5 @@ module.exports = (sequelize,DataTypes )=>{
             timestamps: false
         },
 );
-    
         return product
 }
