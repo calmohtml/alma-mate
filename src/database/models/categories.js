@@ -1,6 +1,6 @@
 module.exports = (sequelize,DataTypes )=>{
-    const brand = sequelize.define(
-        'Brand',
+    const category = sequelize.define(
+        'Category',
         {
             name: DataTypes.STRING,
         },
@@ -8,5 +8,5 @@ module.exports = (sequelize,DataTypes )=>{
             timestamps: false
         },
 );
-        return brand
+        return category
 }

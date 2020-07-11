@@ -4,10 +4,10 @@ const OP = DB.Sequelize.Op
 
 const dbController ={
     listar: (req, res)=>{
-        sequelize.query('SELECT * FROM brands')
+        sequelize.query('SELECT * FROM products')
             .then((resultados)=>{
-                let marcas = resultados[0]
-                res.send(marcas)
+                let productos = resultados[0]
+                res.send(productos)
             })
     },
 }
