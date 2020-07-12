@@ -1,20 +1,55 @@
 const fs = require('fs');
 const path = require('path');
 
-// linkeo nuestra base de datos -----------------------------------------------------
-const DB = require('../database/models') 
+// linkeo nuestra base de datos --------------------
+const DB = require('../database/models')
 const { sequelize } = require('../database/models')
 const OP = DB.Sequelize.Op
-// -------------------------------------------------------------------------------------
+// -------------------------------------------------
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.join(__dirname, '../data/products.json'); 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
+  // este controlador va a listar todos los productos
+  kit: (req, res) => {
+    DB.Product.findAll()
+      .then((listado) => {
+        res.render('armaTuKit', { listado: listado })
+      })
+      .catch((error) => {
+        res.send(error)
+      })
+  },
+
+  // este controlador va a mostrar el detalle de casa producto
+  detail: (req, res) => {
+    DB.Product.findByPk(req.params.id)
+      .then((productDetail) => {
+        res.render('productDetail', { productDetail: productDetail })
+      })
+      .catch((error) => {
+        res.send(error)
+      })
+  },
+
+  // este controlador agrega el producto al carrito
+  cart: (req, res) => {
+    DB.Product.findByPk(req.params.id)
+      .then((productCart) => {
+        res.render('productCart', { productCart: productCart })
+      })
+      .catch((error) => {
+        res.send(error)
+      })
+  },
+
+  // este controlador te lleva al formulario de creacion 
   add: (req, res) => {
     res.render('productAdd')
   },
 
+  // este controlador guarda la informacion del producto
   store: (req, res) => {
     let storeProducts = {
       id: products[products.length - 1].id + 1,
@@ -30,18 +65,36 @@ const productsController = {
     res.redirect('/products/kit')
   },
 
-  // este controlador agrega el producto al carrito ----------------------------
-  cart: (req, res) => {
-    DB.Product.findByPk(req.params.id)
-        .then((productCart)=>{
-            res.render('productCart', {productCart: productCart})
-        })
-        .catch((error)=>{
-            res.send(error)
-        })
+  // este controlador te lleva al formulario de edicion 
+  edit: (req, res) => {
+    let productFound = products.find(product =>
+      product.id == req.params.id
+    )
+    res.render('productEdit', { productFound })
   },
-  // ---------------------------------------------------------------------------
 
+  // este controlador guarda la informacion nueva del producto
+  update: (req, res) => {
+    let productId = req.params.id
+    let productToEdit = []
+    products.forEach(product => {
+      if (product.id == productId) {
+        product.name = req.body.name
+        product.price = req.body.price
+        product.discount = req.body.discount
+        product.category = req.body.category
+        product.description = req.body.description
+        product.image = req.body.image
+        productToEdit.push(product)
+      } else {
+        productToEdit.push(product)
+      }
+    });
+    fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, ' '))
+    res.redirect('/products/kit')
+  },
+
+  // este controlador elimina productos
   destroy: (req, res) => {
     let productId = req.params.id
     let productToDelete = products.filter(product => product.id != productId)
@@ -52,56 +105,6 @@ const productsController = {
     res.redirect('/products/kit')
   },
 
-  // este controlador va a mostrar el detalle de casa producto----------------
-  detail: (req, res) => {
-    DB.Product.findByPk(req.params.id)
-        .then((productDetail)=>{
-            res.render('productDetail', {productDetail: productDetail})
-        })
-        .catch((error)=>{
-            res.send(error)
-        })
-  },
-  // -------------------------------------------------------------------------
-
-  edit: (req, res) => {
-    let productFound = products.find(product =>
-      product.id == req.params.id
-    )
-    res.render('productEdit', {productFound})
-  },
-
-  update: (req, res)=>{
-    let productId = req.params.id
-    let productToEdit = []
-      products.forEach(product => {
-        if (product.id == productId) {
-          product.name = req.body.name
-			    product.price = req.body.price
-			    product.discount = req.body.discount
-			    product.category = req.body.category
-			    product.description = req.body.description
-          product.image = req.body.image
-		  	  productToEdit.push(product)
-        } else {
-          productToEdit.push(product)
-        }
-      });
-      fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, ' '))
-      res.redirect('/products/kit')
-  },
-
-  // este controlador va a listar todos los productos -----------------------------------
-  kit: (req, res) => {
-    DB.Product.findAll()
-        .then((listado)=>{
-            res.render('armaTuKit',{listado: listado})
-        })
-        .catch((error)=>{
-            res.send(error)
-        })
-  },
-  // -------------------------------------------------------------------------------------
 }
 
 module.exports = productsController;
