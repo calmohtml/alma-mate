@@ -1,4 +1,4 @@
-module.exports = (sequelize,DataTypes )=>{
+module.exports = (sequelize, DataTypes) => {
     const product = sequelize.define(
         'Product',
         {
@@ -13,6 +13,16 @@ module.exports = (sequelize,DataTypes )=>{
         {
             timestamps: false
         },
-);
-        return product
+    );
+    product.associate = (models) => {
+        product.belongsTo(models.Category, {
+            as: 'category',
+            foreignKey: 'id_category',
+        });
+        product.belongsTo(models.Brand, {
+            as: 'brand',
+            foreignKey: 'id_brand',
+        });
+    }
+    return product
 }

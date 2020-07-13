@@ -1,4 +1,4 @@
-module.exports = (sequelize,DataTypes )=>{
+module.exports = (sequelize, DataTypes) => {
     const brand = sequelize.define(
         'Brand',
         {
@@ -7,6 +7,12 @@ module.exports = (sequelize,DataTypes )=>{
         {
             timestamps: false
         },
-);
-        return brand
+    );
+    brand.associate = (models) => {
+        brand.hasMany(models.Product, {
+            as: "products",
+            foreignKey: 'id_brand'
+        })
+    }
+    return brand
 }

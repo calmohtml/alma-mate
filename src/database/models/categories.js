@@ -1,4 +1,4 @@
-module.exports = (sequelize,DataTypes )=>{
+module.exports = (sequelize, DataTypes) => {
     const category = sequelize.define(
         'Category',
         {
@@ -7,6 +7,12 @@ module.exports = (sequelize,DataTypes )=>{
         {
             timestamps: false
         },
-);
-        return category
+    );
+    category.associate = (models) => {
+        category.hasMany(models.Product, {
+            as: "products",
+            foreignKey: 'id_category'
+        })
+    }
+    return category
 }
