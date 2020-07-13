@@ -48,7 +48,8 @@ const productsController = {
   add: async (req, res)=>{
     try {
         const categorias = await DB.Category.findAll()
-        res.render('productAdd', {categorias})
+        const marcas = await DB.Brands.findAll()
+        res.render('productAdd', {categorias, marcas})
     } catch (error) {
         res.send(error)
     } 
