@@ -39,6 +39,15 @@
             <input type="number" id="discount" name="discount" placeholder="Ej: 20">
           </div>
         </div>
+        <div class="product-category-productAdd">
+          <label for="category">Categoría</label>
+          <br>
+          <select name="id_brand" id="">
+            <% marcas.forEach(marca => { %>
+              <option value="<%= marca.id %>"><%= marca.name %> </option>
+             <% }) %>
+          </select>
+        </div>
           <div class="product__image--productAdd">
             <label for="image">Imágenes</label>
             <br>

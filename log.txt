@@ -657,3 +657,15 @@ Se ingreso en la pagina/images/almamate.png
 Se ingreso en la pagina/css/styles.css
 Se ingreso en la pagina/images/almamate.png
 Se ingreso en la pagina/css/styles.css
+Se ingreso en la pagina/products/add
+Se ingreso en la pagina/favicon.ico
+Se ingreso en la pagina/products/add
+Se ingreso en la pagina/products/add
+Se ingreso en la pagina/products/add
+Se ingreso en la pagina/css/styles.css
+Se ingreso en la pagina/images/almamate.png
+Se ingreso en la pagina/fonts/LeagueSpartan-Bold.otf
+Se ingreso en la pagina/products/add
+Se ingreso en la pagina/css/styles.css
+Se ingreso en la pagina/images/almamate.png
+Se ingreso en la pagina/fonts/LeagueSpartan-Bold.otf
