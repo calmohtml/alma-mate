@@ -45,9 +45,14 @@ const productsController = {
   },
 
   // este controlador te lleva al formulario de creacion 
-  add: (req, res) => {
-    res.render('productAdd')
-  },
+  add: async (req, res)=>{
+    try {
+        const categorias = await DB.Category.findAll()
+        res.render('productAdd', {categorias})
+    } catch (error) {
+        res.send(error)
+    } 
+},
 
   // este controlador guarda la informacion del producto
   store: (req, res) => {

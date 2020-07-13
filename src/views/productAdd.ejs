@@ -27,11 +27,10 @@
           <div class="product-category-productAdd">
             <label for="category">Categoría</label>
             <br>
-            <select name="category" id="category">
-              <option value="mate">Mates</option>
-              <option value="bombilla">Bombillas</option>
-              <option value="termo">Termos</option>
-              <option value="bolso">Bolsos</option>
+            <select name="id_category" id="">
+              <% categorias.forEach(categoria => { %>
+                <option value="<%= categoria.id %>"><%= categoria.name %> </option>
+               <% }) %>
             </select>
           </div>
           <div class="product-discount-productAdd">
