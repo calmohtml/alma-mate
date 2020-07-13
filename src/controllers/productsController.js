@@ -56,20 +56,14 @@ const productsController = {
 },
 
   // este controlador guarda la informacion del producto
-  store: (req, res) => {
-    let storeProducts = {
-      id: products[products.length - 1].id + 1,
-      name: req.body.name,
-      price: req.body.price,
-      category: req.body.category,
-      discount: req.body.discount,
-      description: req.body.description,
-      image: req.files[0].filename,
-    }
-    let newDB = [...products, storeProducts]
-    fs.writeFileSync(productsFilePath, JSON.stringify(newDB, null, ' '))
-    res.redirect('/products/kit')
-  },
+  store: async (req, res)=>{
+    try {
+        await DB.Product.create(req.body)
+        res.redirect('/products/kit')
+    } catch (error) {
+        res.send(error)
+    } 
+ },
 
   // este controlador te lleva al formulario de edicion 
   edit: (req, res) => {
