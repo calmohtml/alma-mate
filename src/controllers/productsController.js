@@ -1,3 +1,4 @@
+'use strict'
 const fs = require('fs');
 const path = require('path');
 
@@ -80,6 +81,7 @@ const productsController = {
   update: async (req, res) => {
     const productToEdit = await DB.Product.findByPk(req.params.id)
     productToEdit.update(req.body)
+    res.redirect('/products/kit')
   },
 
   // este controlador elimina productos
