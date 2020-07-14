@@ -29,6 +29,9 @@
             <br>
             <select name="id_category" id="category">
               <% categorias.forEach(categoria => { %>
+                <% if (productFound.CategoryId === categoria.id) { %>
+                    <option value="<%= categoria.id %>" selected><%= categoria.name %> </option>
+                <% } %>
                 <option value="<%= categoria.id %>"><%= categoria.name %> </option>
                <% }) %>
             </select>
