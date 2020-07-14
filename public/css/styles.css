@@ -811,6 +811,7 @@ a {
 
 .founder-description-1 img {
   width: 100%;
+  height: auto;
   border-radius: 50px;
 }
 
