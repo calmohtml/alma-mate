@@ -2,14 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// linkeo nuestra base de datos --------------------
+// linkeo nuestra base de datos
 const DB = require('../database/models')
 const { sequelize } = require('../database/models')
 const OP = DB.Sequelize.Op
-// -------------------------------------------------
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
   // este controlador va a listar todos los productos
@@ -84,14 +80,13 @@ const productsController = {
     res.redirect('/products/kit')
   },
 
-  // este controlador elimina productos
+  // este controlador elimina productos TIENE QUE SER UN SOFT DELETE
   destroy: (req, res) => {
-    let productId = req.params.id
-    let productToDelete = products.filter(product => product.id != productId)
-
-    let productToDeleteJSON = JSON.stringify(productToDelete)
-    fs.writeFileSync(productsFilePath, productToDeleteJSON)
-
+    DB.Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
     res.redirect('/products/kit')
   },
 
