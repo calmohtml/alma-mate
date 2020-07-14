@@ -7,7 +7,7 @@ const { sequelize } = require('../database/models')
 const OP = DB.Sequelize.Op
 // -------------------------------------------------
 
-const productsFilePath = path.join(__dirname, '../data/products.json'); 
+const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
@@ -45,53 +45,41 @@ const productsController = {
   },
 
   // este controlador te lleva al formulario de creacion 
-  add: async (req, res)=>{
+  add: async (req, res) => {
     try {
-        const categorias = await DB.Category.findAll()
-        const marcas = await DB.Brand.findAll()
-        res.render('productAdd', {categorias, marcas})
+      const categorias = await DB.Category.findAll()
+      const marcas = await DB.Brand.findAll()
+      res.render('productAdd', { categorias, marcas })
     } catch (error) {
-        res.send(error)
-    } 
-},
-
-  // este controlador guarda la informacion del producto
-  store: async (req, res)=>{
-    try {
-        await DB.Product.create(req.body)
-        res.redirect('/products/kit')
-    } catch (error) {
-        res.send(error)
-    } 
- },
-
-  // este controlador te lleva al formulario de edicion 
-  edit: (req, res) => {
-    let productFound = products.find(product =>
-      product.id == req.params.id
-    )
-    res.render('productEdit', { productFound })
+      res.send(error)
+    }
   },
 
-  // este controlador guarda la informacion nueva del producto
-  update: (req, res) => {
-    let productId = req.params.id
-    let productToEdit = []
-    products.forEach(product => {
-      if (product.id == productId) {
-        product.name = req.body.name
-        product.price = req.body.price
-        product.discount = req.body.discount
-        product.category = req.body.category
-        product.description = req.body.description
-        product.image = req.body.image
-        productToEdit.push(product)
-      } else {
-        productToEdit.push(product)
-      }
-    });
-    fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, ' '))
-    res.redirect('/products/kit')
+  // este controlador guarda la informacion del producto
+  store: async (req, res) => {
+    try {
+      await DB.Product.create(req.body)
+      res.redirect('/products/kit')
+    } catch (error) {
+      res.send(error)
+    }
+  },
+
+  // este controlador te lleva al formulario de edicion 
+  edit: async (req, res) => {
+    try {
+      const productFound = await DB.Product.findByPk(req.params.id)
+      const categorias = await DB.Category.findAll()
+      const marcas = await DB.Brand.findAll()
+      res.render('productEdit', { productFound, categorias, marcas })
+    } catch (error) {
+      res.send(error)
+    }
+  },
+
+  update: async (req, res) => {
+    const productToEdit = await DB.Product.findByPk(req.params.id)
+    productToEdit.update(req.body)
   },
 
   // este controlador elimina productos

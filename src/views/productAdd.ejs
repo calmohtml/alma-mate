@@ -2,6 +2,7 @@
 <html lang="es">
 <!-- Acá va el include('partials/head') -->
 <%- include('partials/head') %>
+
 <body>
   <!-- Acá va el include('partials/headerNavbar') -->
   <%- include('partials/headerNavbar') %>
@@ -29,8 +30,8 @@
             <br>
             <select name="id_category" id="">
               <% categorias.forEach(categoria => { %>
-                <option value="<%= categoria.id %>"><%= categoria.name %> </option>
-               <% }) %>
+              <option value="<%= categoria.id %>"><%= categoria.name %> </option>
+              <% }) %>
             </select>
           </div>
           <div class="product-discount-productAdd">
@@ -44,24 +45,24 @@
           <br>
           <select name="id_brand" id="">
             <% marcas.forEach(marca => { %>
-              <option value="<%= marca.id %>"><%= marca.name %> </option>
-             <% }) %>
+            <option value="<%= marca.id %>"><%= marca.name %> </option>
+            <% }) %>
           </select>
         </div>
-          <div class="product__image--productAdd">
-            <label for="image">Imágenes</label>
-            <br>
-            <input type="file" id="image" name="image">
-          </div>
-          <div class="product-description-productAdd">
-            <label for="description">Descripción</label>
-            <br>
-            <textarea id="description" name="description" placeholder="Breve descripcion del producto" cols=30
-              rows=5></textarea>
-          </div>
-          <div class="product__button--productAdd">
-            <button class="store-btn-productAdd">Guardar producto</button>
-          </div>
+        <div class="product__image--productAdd">
+          <label for="image">Imágenes</label>
+          <br>
+          <input type="file" id="image" name="image">
+        </div>
+        <div class="product-description-productAdd">
+          <label for="description">Descripción</label>
+          <br>
+          <textarea id="description" name="description" placeholder="Breve descripcion del producto" cols=30
+            rows=5></textarea>
+        </div>
+        <div class="product__button--productAdd">
+          <button class="store-btn-productAdd">Guardar producto</button>
+        </div>
     </form>
   </section>
   <!-- Acá va el include('partials/footer') -->
