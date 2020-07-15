@@ -54,8 +54,12 @@ const productsController = {
 
   // este controlador guarda la informacion del producto
   store: async (req, res) => {
+    const newProduct = {
+        ...req.body,
+        image: req.files[0].filename
+    }
     try {
-      await DB.Product.create(req.body)
+      await DB.Product.create(newProduct)
       res.redirect('/products/kit')
     } catch (error) {
       res.send(error)
