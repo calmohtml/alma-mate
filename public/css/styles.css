@@ -1258,7 +1258,7 @@ a {
 }
 
 .grid-child {
-  height: 57%;
+  height: 50%;
   justify-content: center;
   display: flex;
   align-items: center;
