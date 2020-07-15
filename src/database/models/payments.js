@@ -3,6 +3,7 @@ module.exports = (sequelize,DataTypes )=>{
         'Payment',
         {
             card_name: DataTypes.STRING,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false

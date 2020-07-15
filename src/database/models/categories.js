@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         'Category',
         {
             name: DataTypes.STRING,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false

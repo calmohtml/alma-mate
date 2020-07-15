@@ -5,6 +5,7 @@ module.exports = (sequelize,DataTypes )=>{
             id_user: DataTypes.INTEGER,
             id_product: DataTypes.INTEGER,
             total_price:DataTypes.INTEGER,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false

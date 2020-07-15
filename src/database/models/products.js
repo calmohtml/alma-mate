@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             description: DataTypes.STRING,
             id_brand: DataTypes.INTEGER,
             image: DataTypes.STRING,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false

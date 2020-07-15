@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         'Brand',
         {
             name: DataTypes.STRING,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false

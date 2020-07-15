@@ -8,6 +8,7 @@ module.exports = (sequelize,DataTypes )=>{
                 defaultValue: Date.now(),
             },
             id_payment:DataTypes.INTEGER,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false

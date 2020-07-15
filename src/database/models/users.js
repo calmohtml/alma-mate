@@ -7,6 +7,7 @@ module.exports = (sequelize,DataTypes )=>{
             password: DataTypes.STRING,
             avatar:DataTypes.STRING,
             detalle_compra: DataTypes.INTEGER,
+            deleted_at: DataTypes.DATE
         },
         {
             timestamps: false
