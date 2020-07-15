@@ -5,7 +5,6 @@ module.exports = {
     "database": "almamate",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false,
     'define': {
       'underscored': true,
       'paranoid':true,
