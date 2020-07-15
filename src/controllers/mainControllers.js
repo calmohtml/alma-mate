@@ -13,6 +13,11 @@ const mainController = {
   contact: (req, res) => {
     res.render('contact')
   },
+
+  emptyCart: (req, res) =>{
+    res.render('emptyCart')
+  },
+
   sendEmail: (req, res) => {
     res.render('sendEmail')
   }

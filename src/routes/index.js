@@ -17,6 +17,9 @@ router.get('/contact', mainController.contact)
 //Ruta del formulario de Contacto
 router.get('/sendemail', mainController.sendEmail)
 
+//Ruta que lleva al carrito vacio
+router.get('/emptyCart', mainController.emptyCart)
+
 // prueba vinculacion de sequelize
 router.get('/list', dbController.listar)
 
