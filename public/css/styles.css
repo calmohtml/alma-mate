@@ -805,12 +805,11 @@ a {
 .founder-description-1 {
   display: flex;
   align-items: center;
-  width: 50%;
   padding: 10px 10px;
 }
 
 .founder-description-1 img {
-  width: 100%;
+  width: 300px;
   height: auto;
   border-radius: 50px;
 }
