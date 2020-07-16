@@ -35,6 +35,6 @@ router.post('/login', [
 
 // Ruta de registo para clientes nuevos
 router.get('/register', guestMiddleware, usersController.register)
-router.post('/register',validationMiddleware, logDBMiddleware, upload.any(), usersController.storeUser)
+router.post('/register', logDBMiddleware, upload.any(), validationMiddleware, usersController.storeUser)
 
 module.exports = router;

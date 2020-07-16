@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- Acá va el include('partials/head') -->
-  <%- include('partials/head') %>
+<!-- Acá va el include('partials/head') -->
+<%- include('partials/head') %>
+
 <body>
   <!-- Acá va el include('partials/headerNavbar') -->
   <%- include('partials/headerNavbar') %>
@@ -29,11 +30,12 @@
             <br>
             <select name="id_category" id="category">
               <% categorias.forEach(categoria => { %>
-                <% if (productFound.CategoryId === categoria.id) { %>
-                    <option value="<%= categoria.id %>" selected><%= categoria.name %> </option>
-                <% } %>
-                <option value="<%= categoria.id %>"><%= categoria.name %> </option>
-               <% }) %>
+                <% if (productFound.id_category == categoria.id) { %>
+              <option value="<%= categoria.id %>" selected><%= categoria.name %> </option>
+              <% } else { %>
+              <option value="<%= categoria.id %>"><%= categoria.name %> </option>
+              <% } %>
+              <% }) %>
             </select>
           </div>
           <div class="product-discount-productAdd">
@@ -46,7 +48,11 @@
             <br>
             <select name="id_brand" id="">
               <% marcas.forEach(marca => { %>
+                <% if (productFound.id_brand == marca.id) { %>
+              <option value="<%= marca.id %>" selected><%= marca.name %> </option>
+              <% } else { %>
               <option value="<%= marca.id %>"><%= marca.name %> </option>
+              <% } %>
               <% }) %>
             </select>
           </div>
@@ -70,4 +76,5 @@
   <!-- Acá va el include('partials/footer') -->
   <%- include('partials/footer') %>
 </body>
+
 </html>

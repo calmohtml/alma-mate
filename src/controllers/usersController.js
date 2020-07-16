@@ -21,7 +21,8 @@ const usersController = {
     register: (req, res) => {
         res.render('register')
     },
-    // este controlador es el q va a guardar la info en la base de datos en json
+    
+    // este controlador es el q va a guardar la info en la base de datos
     storeUser: async (req, res, next) => {
         let validation = validationResult(req)
         let errors = validation.errors
@@ -63,21 +64,3 @@ const usersController = {
 module.exports = usersController;
 
 
-
-
-
-// let validation = validationResult(req)
-//         let errors = validation.errors
-//         if (errors != '') {
-//             res.render('register', {errors})
-//         }
-//         storeUser = {
-//         id: users[users.length - 1].id + 1,
-//         email: req.body.email,
-//         password: bcrypt.hashSync(req.body.password, 10),
-//         repeatpassword: bcrypt.hashSync(req.body.repeatpassword, 10),
-//         avatar: req.files[0].filename,
-//     }
-//     let newDB = [...users, storeUser]
-//     fs.writeFileSync(usersFilePath, JSON.stringify(newDB, null, ' '))
-//     res.redirect('/')
