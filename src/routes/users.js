@@ -4,11 +4,13 @@ const multer = require('multer')
 const path = require('path')
 const { use } = require('./products');
 const session = require('express-session')
+const middlewareValidation = require('../middlewares/validationMiddleware')
 const { check, validationResult, body } = require('express-validator');
 const logDBMiddleware = require('../middlewares/logDBMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 
 const usersController = require('../controllers/usersController');
+const validationMiddleware = require('../middlewares/validationMiddleware');
 
 // el metodo storage de multer guarda la foto del avatar de cada usuario en una carpeta
 let storage = multer.diskStorage({
@@ -33,10 +35,6 @@ router.post('/login', [
 
 // Ruta de registo para clientes nuevos
 router.get('/register', guestMiddleware, usersController.register)
-router.post('/register', [
-    check('email').isEmail().withMessage('E-mail no válido'),
-    check('password').isLength({min: 8}).withMessage('Contraseña no válida'),
-    check('repeatpassword').isLength({min: 8}).withMessage('Ambas contraseñas deben ser iguales')
-], logDBMiddleware, upload.any(), usersController.storeUser)
+router.post('/register',validationMiddleware, logDBMiddleware, upload.any(), usersController.storeUser)
 
 module.exports = router;
