@@ -71,7 +71,7 @@ const productsController = {
       const productFound = await DB.Product.findByPk(req.params.id)
       const categorias = await DB.Category.findAll()
       const marcas = await DB.Brand.findAll()
-      res.render('productEdit', { productFound, categorias, marcas })
+      res.render('productEdit', {productFound, categorias, marcas})
     } catch (error) {
       res.send(error)
     }

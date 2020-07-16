@@ -37,4 +37,6 @@ router.post('/login', [
 router.get('/register', guestMiddleware, usersController.register)
 router.post('/register', logDBMiddleware, upload.any(), validationMiddleware, usersController.storeUser)
 
+router.get('/avatar', usersController.avatar)
+
 module.exports = router;
