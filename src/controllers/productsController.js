@@ -84,7 +84,7 @@ const productsController = {
     res.redirect('/products/kit')
   },
 
-  // este controlador elimina productos TIENE QUE SER UN SOFT DELETE
+  // este controlador elimina productos
   destroy: (req, res) => {
     DB.Product.destroy({
       where: {

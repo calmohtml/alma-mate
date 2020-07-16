@@ -25,7 +25,7 @@ const usersController = {
     storeUser: async (req, res, next) => {
         let validation = validationResult(req)
         let errors = validation.errors
-        return res.send(errors)
+        // return res.send(errors)
         if (errors != '') {
             res.render('register', {errors})
         }
