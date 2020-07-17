@@ -10,8 +10,8 @@ const { sequelize } = require('../database/models')
 const OP = DB.Sequelize.Op
 
 // antigua base de datos
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// const usersFilePath = path.join(__dirname, '../data/users.json');
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
     login: (req, res) => {
