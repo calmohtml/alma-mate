@@ -816,6 +816,11 @@ a {
   border-radius: 50px;
 }
 
+.founders-repos a {
+  display: flex;
+  line-height: 30px;
+}
+
 /* Fin de About Us - Desktop */
 
 /* contact - Desktop */

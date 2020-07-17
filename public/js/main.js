@@ -1,7 +1,5 @@
 'use strict'
 
-console.log('js');
-
 ScrollReveal().reveal('.hero', {delay: 500 });
 ScrollReveal().reveal('.products', { delay: 500 });
 ScrollReveal().reveal('.banner', { delay: 500 });
