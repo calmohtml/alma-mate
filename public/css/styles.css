@@ -929,9 +929,8 @@ a {
     width: 80%;
   }
 
-  .grid-child {
-    height: 100%;
-    border: 1px solid blueviolet;
+  .grid-responsive {
+    border: 1px solid white;
   }
 
   .footer-container {
@@ -1284,10 +1283,16 @@ a {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   width: 100%;
   height: 100%;
+}
+
+.grid-child:first-child {
+  height: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .grid-child {
@@ -1297,9 +1302,12 @@ a {
   align-items: center;
 }
 
+.grid-child:last-child {
+  height: 95%;
+}
+
 .grid-child img {
   text-align: center;
-  height: 100%;
   width: 100%;
 }
 
