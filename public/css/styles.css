@@ -1272,10 +1272,6 @@ a {
 
 #slides .slide_1 {
   background-image: url('/images/banner-image2.jpg');
-  /* background: #C0B383;
-  background: -webkit-linear-gradient(bottom, #C0B383, #373737);
-  background: -moz-linear-gradient(bottom, #C0B383, #373737);
-  background: linear-gradient(to top, #C0B383, #373737); */
 }
 
 .slide-content:first-child {

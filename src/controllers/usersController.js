@@ -48,7 +48,7 @@ const usersController = {
         }
     },
 
-    // este controlador va a hacer las validaciones del usuario para saber si ya esta registrado y luego loguearse y quedar en sesion
+    // este controlador va a hacer las validaciones del usuario para saber si ya esta registrado, luego loguearse y quedar en sesion
     processLogin: async (req, res) => {
         try {
             let validation = validationResult(req);
@@ -74,6 +74,15 @@ const usersController = {
 }
 
 module.exports = usersController;
+
+
+
+
+
+
+
+
+
 
 
 // if (errors == "") {
