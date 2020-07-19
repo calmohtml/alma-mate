@@ -10,7 +10,7 @@
     <div>
       <h2 class="productAdd-title">Editando: <%= productFound.name %></h2>
     </div>
-    <form class="form-productAdd" action="/products/edit/<%= productFound.id %>?_method=PUT" method="POST">
+    <form class="form-productAdd" action="/products/edit/<%= productFound.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
       <div class="cuerpo-productAdd">
         <div class="left-body-productAdd">
           <div class="product-name-productAdd">

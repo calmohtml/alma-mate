@@ -30,10 +30,10 @@ router.get('/login', guestMiddleware, usersController.login)
 // Ruta de validación de logeo
 router.post('/login', [
     check('email').isEmail().withMessage('E-mail no válido'),
-    check('password').isLength({min: 8}).withMessage('Contraseña no válida')
+    check('password').isLength({ min: 8 }).withMessage('Contraseña no válida')
 ], usersController.processLogin)
 
-// Ruta de registo para clientes nuevos
+// Rutas de registo para clientes nuevos
 router.get('/register', guestMiddleware, usersController.register)
 router.post('/register', logDBMiddleware, upload.any(), validationMiddleware, usersController.storeUser)
 
@@ -41,6 +41,10 @@ router.get('/avatar', usersController.avatar)
 
 // Ruta que lista los usuarios
 router.get('/list', usersController.listar)
+
+// Rutas de edicion de usuario
+router.get('/edit/:id', usersController.edit)
+router.put('/edit/:id', usersController.update)
 
 // Ruta que elimina usuarios
 router.delete('/delete/:id', usersController.destroy)

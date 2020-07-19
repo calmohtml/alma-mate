@@ -9,10 +9,6 @@ const DB = require('../database/models')
 const { sequelize } = require('../database/models')
 const OP = DB.Sequelize.Op
 
-// antigua base de datos
-// const usersFilePath = path.join(__dirname, '../data/users.json');
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
 const usersController = {
     login: (req, res) => {
         res.render('login')
@@ -26,14 +22,14 @@ const usersController = {
         res.render('avatar')
     },
 
-    listar: (req, res)=>{
+    listar: (req, res) => {
         DB.User.findAll()
-      .then((listado) => {
-        res.render('users', { listado: listado })
-      })
-      .catch((error) => {
-        res.send(error)
-      })
+            .then((listado) => {
+                res.render('users', { listado: listado })
+            })
+            .catch((error) => {
+                res.send(error)
+            })
     },
 
     // este controlador es el q va a guardar la info en la base de datos
@@ -75,21 +71,36 @@ const usersController = {
                 }
 
             } else {
-                res.render('login', {errors})
+                res.render('login', { errors })
             }
         } catch (error) {
             res.send(error)
         }
     },
 
+    edit: async (req, res) => {
+        try {
+            const userFound = await DB.User.findByPk(req.params.id)
+            res.render('userEdit', { userFound })
+        } catch (error) {
+            res.send(error)
+        }
+    },
+
+    update: async (req, res) => {
+        const userToEdit = await DB.User.findByPk(req.params.id)
+        userToEdit.update(req.body)
+        res.redirect('/users/list')
+    },
+
     destroy: (req, res) => {
         DB.User.destroy({
-          where: {
-            id: req.params.id
-          }
+            where: {
+                id: req.params.id
+            }
         })
         res.redirect('/users/list')
-      },
+    },
 }
 
 module.exports = usersController;
