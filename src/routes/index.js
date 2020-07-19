@@ -21,6 +21,6 @@ router.get('/sendemail', mainController.sendEmail)
 router.get('/emptyCart', mainController.emptyCart)
 
 // prueba vinculacion de sequelize
-router.get('/list', dbController.listar)
+// router.get('/list', dbController.listar)
 
 module.exports = router;

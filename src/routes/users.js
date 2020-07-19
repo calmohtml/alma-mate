@@ -39,4 +39,10 @@ router.post('/register', logDBMiddleware, upload.any(), validationMiddleware, us
 
 router.get('/avatar', usersController.avatar)
 
+// Ruta que lista los usuarios
+router.get('/list', usersController.listar)
+
+// Ruta que elimina usuarios
+router.delete('/delete/:id', usersController.destroy)
+
 module.exports = router;

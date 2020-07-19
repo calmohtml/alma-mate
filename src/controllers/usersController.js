@@ -26,6 +26,16 @@ const usersController = {
         res.render('avatar')
     },
 
+    listar: (req, res)=>{
+        DB.User.findAll()
+      .then((listado) => {
+        res.render('users', { listado: listado })
+      })
+      .catch((error) => {
+        res.send(error)
+      })
+    },
+
     // este controlador es el q va a guardar la info en la base de datos
     storeUser: async (req, res, next) => {
         let validation = validationResult(req)
@@ -71,28 +81,15 @@ const usersController = {
             res.send(error)
         }
     },
+
+    destroy: (req, res) => {
+        DB.User.destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+        res.redirect('/users/list')
+      },
 }
 
 module.exports = usersController;
-
-
-
-
-
-
-
-
-
-
-
-// if (errors == "") {
-//     let user = await DB.user.findOne({
-//         where: {
-//             email: req.body.email
-//         }
-//     });
-//     if (user && bcrypt.compareSync(req.body.password, user.password)) {
-//         req.session.userId = user.id;
-//         res.redirect('kit')
-//     }
-// }
