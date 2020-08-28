@@ -338,6 +338,10 @@ a {
   color: #373737
 }
 
+.product__image--productAdd img {
+  width: 500px;
+}
+
 .product-price-productAdd {
   margin: 15px;
   color: #373737
