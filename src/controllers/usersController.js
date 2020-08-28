@@ -36,7 +36,6 @@ const usersController = {
     storeUser: async (req, res, next) => {
         let validation = validationResult(req)
         let errors = validation.errors
-        // return res.send(errors)
         if (errors != '') {
             res.render('register', { errors })
         }
@@ -69,13 +68,22 @@ const usersController = {
                     req.session.userId = user.id;
                     res.redirect('avatar')
                 }
-
             } else {
                 res.render('login', { errors })
             }
         } catch (error) {
             res.send(error)
         }
+    },
+
+    logout: async(req, res)=>{
+        await DB.User.destroy({ 
+			where: { 
+				email: req.params.email
+			} }
+			)
+		res.redirect('/users/login')
+		req.session.destroy();
     },
 
     edit: async (req, res) => {

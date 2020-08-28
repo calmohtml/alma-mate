@@ -1,16 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
+
 const multer = require('multer')
-const path = require('path')
+
 const { use } = require('./products');
-const session = require('express-session')
-const middlewareValidation = require('../middlewares/validationMiddleware')
+const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
-const logDBMiddleware = require('../middlewares/logDBMiddleware')
-const guestMiddleware = require('../middlewares/guestMiddleware')
+
+const logDBMiddleware = require('../middlewares/logDBMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const validationMiddleware = require('../middlewares/validationMiddleware');
 
 const usersController = require('../controllers/usersController');
-const validationMiddleware = require('../middlewares/validationMiddleware');
+
 
 // el metodo storage de multer guarda la foto del avatar de cada usuario en una carpeta
 let storage = multer.diskStorage({
@@ -32,6 +35,9 @@ router.post('/login', [
     check('email').isEmail().withMessage('E-mail no válido'),
     check('password').isLength({ min: 8 }).withMessage('Contraseña no válida')
 ], usersController.processLogin)
+
+// Ruta para el desloqueo de los usuarios
+router.get('/logout', usersController.logout);
 
 // Rutas de registo para clientes nuevos
 router.get('/register', guestMiddleware, usersController.register)
